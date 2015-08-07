@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="LineSDKStarterSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-pP-DTy">
+                                <rect key="frame" x="154" y="155" width="117" height="30"/>
+                                <state key="normal" title="LOGIN with LINE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginWithLine:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="u0e-7i-oJ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMn-r6-igR">
+                                <rect key="frame" x="272" y="285" width="57" height="30"/>
+                                <state key="normal" title="TRY API">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryApi:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="CRC-Rw-T6Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb7-g4-gdW">
+                                <rect key="frame" x="269" y="415" width="63" height="30"/>
+                                <state key="normal" title="LOGOUT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logout:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Lpp-mT-b3S"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ge1-Nc-w1j">
+                                <rect key="frame" x="328" y="155" width="94" height="30"/>
+                                <state key="normal" title="LOGIN in app">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginInApp:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fzP-hE-XYP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ce-pP-DTy" firstAttribute="centerX" secondItem="aMn-r6-igR" secondAttribute="centerX" constant="-88" id="3b6-4D-NUY"/>
+                            <constraint firstItem="Mb7-g4-gdW" firstAttribute="top" secondItem="aMn-r6-igR" secondAttribute="bottom" constant="100" id="KbD-gp-HpZ"/>
+                            <constraint firstItem="ge1-Nc-w1j" firstAttribute="leading" secondItem="0ce-pP-DTy" secondAttribute="trailing" constant="57" id="Mns-Tb-oQO"/>
+                            <constraint firstAttribute="centerX" secondItem="aMn-r6-igR" secondAttribute="centerX" constant="-0.5" id="RIh-GM-crT"/>
+                            <constraint firstItem="Mb7-g4-gdW" firstAttribute="centerX" secondItem="aMn-r6-igR" secondAttribute="centerX" constant="-0.5" id="SDR-Ia-bjS"/>
+                            <constraint firstAttribute="centerY" secondItem="aMn-r6-igR" secondAttribute="centerY" id="UtE-G4-7dK"/>
+                            <constraint firstItem="ge1-Nc-w1j" firstAttribute="centerY" secondItem="0ce-pP-DTy" secondAttribute="centerY" id="fJN-zE-xSe"/>
+                            <constraint firstItem="aMn-r6-igR" firstAttribute="top" secondItem="0ce-pP-DTy" secondAttribute="bottom" constant="100" id="wpO-yU-2Lz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
