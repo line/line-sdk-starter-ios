@@ -1,4 +1,4 @@
-# LINE SDK Test application
+# LINE SDK starter application
 
 This is a small toy app that exercises the LINE SDK login and profile APIs. It is meant to be a starting point
 for developers wishing to use these in their own application.
