@@ -25,7 +25,7 @@
 			<string>None</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>line3rdpb.{YOUR_URL_SCHEME}</string>
+				<string>line3rdp.{YOUR_URL_SCHEME}</string>
 			</array>
 		</dict>
 	</array>
