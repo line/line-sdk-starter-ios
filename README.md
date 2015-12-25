@@ -3,6 +3,10 @@
 This is a small toy app that exercises the LINE SDK login and profile APIs. It is meant to be a starting point
 for developers wishing to use these in their own application.
 
+## Before starting
+
+To start integrating your service with LINE, register to become a LINE Partner (https://developers.line.me/requestform/input) and read the development guide (https://developers.line.me/ios/overview).
+
 ## Getting started
 
 To build the app, first check out the repository.
