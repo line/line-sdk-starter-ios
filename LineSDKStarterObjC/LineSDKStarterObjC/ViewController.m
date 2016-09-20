@@ -6,8 +6,7 @@
 //
 
 #import "ViewController.h"
-#import <LineAdapter/LineAdapter.h>
-#import <LineAdapterUI/LineAdapterUI.h>
+#import <LineAdapter/LineSDK.h>
 
 @interface ViewController ()
 
@@ -19,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    adapter = [LineAdapter adapterWithConfigFile];
+    adapter = [LineAdapter defaultAdapter];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(authorizationDidChange:) name:LineAdapterAuthorizationDidChangeNotification object:nil];
 }
 
@@ -42,7 +41,7 @@
         [self alert:@"Already authorized" message:nil];
         return;
     }
-    LineAdapterWebViewController *viewController = [[LineAdapterWebViewController alloc] initWithAdapter:adapter withWebViewOrientation:kOrientationAll];
+    LineAdapterWebViewController *viewController = [[LineAdapterWebViewController alloc] initWithAdapter:adapter withWebViewOrientation:LineAdapterWebViewOrientationAll];
     viewController.navigationItem.leftBarButtonItem = [LineAdapterNavigationController barButtonItemWithTitle:@"Cancel" target:self action:@selector(cancel:)];
     LineAdapterNavigationController *navigationController = [[LineAdapterNavigationController alloc] initWithRootViewController:viewController];
     [self presentViewController:navigationController animated:YES completion:nil];
