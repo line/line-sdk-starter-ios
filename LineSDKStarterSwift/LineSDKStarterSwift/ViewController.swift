@@ -8,7 +8,7 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    private let adapter = LineAdapter.adapterWithConfigFile()
+    private let adapter = LineAdapter.default()!;
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +16,12 @@ final class ViewController: UIViewController {
     }
 
     func startObserveLineAdapterNotification() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "authorizationDidChange:",
-            name: LineAdapterAuthorizationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.authorizationDidChange(_:)),
+                                               name: NSNotification.Name.LineAdapterAuthorizationDidChange, object: nil)
     }
 
-    @IBAction func loginWithLine(sender: AnyObject) {
-        if adapter.authorized {
+    @IBAction func loginWithLine(_ sender: AnyObject) {
+        if adapter.isAuthorized {
             alert("Already authorized", message: "")
             return
         }
@@ -33,68 +33,68 @@ final class ViewController: UIViewController {
         adapter.authorize()
     }
 
-    @IBAction func loginInApp(sender: AnyObject) {
-        if adapter.authorized {
+    @IBAction func loginInApp(_ sender: AnyObject) {
+        if adapter.isAuthorized {
             alert("Already authorized", message: "")
             return
         }
 
-        let viewController = LineAdapterWebViewController(adapter: adapter, withWebViewOrientation: kOrientationAll)
-        viewController.navigationItem.leftBarButtonItem = LineAdapterNavigationController.barButtonItemWithTitle("Cancel", target: self, action: "cancel:")
+        let viewController = LineAdapterWebViewController(adapter: adapter, with: LineAdapterWebViewOrientation.all)
+        viewController.navigationItem.leftBarButtonItem = LineAdapterNavigationController.barButtonItem(withTitle: "Cancel", target: self, action: #selector(ViewController.cancel(_:)))
         let navigationController = LineAdapterNavigationController(rootViewController: viewController)
-        presentViewController(navigationController, animated: true, completion: nil)
+        present(navigationController, animated: true, completion: nil)
     }
 
-    @IBAction func tryApi(sender: AnyObject) {
-        if !adapter.authorized {
+    @IBAction func tryApi(_ sender: AnyObject) {
+        if !adapter.isAuthorized {
             alert("Login first!", message: "")
             return
         }
 
-        adapter.getLineApiClient().getMyProfileWithResultBlock {[unowned self] (profile, error) -> Void in
-            if error != nil {
+        adapter.getLineApiClient().getMyProfile {[unowned self] (profile, error) -> Void in
+            if let error = error {
                 self.alert("Error occured!", message: error.localizedDescription)
                 return
             }
 
-            let displayName = profile["displayName"] as! String
+            let displayName = profile?["displayName"] as! String
             self.alert("Your name is \(displayName)", message: "")
         }
     }
 
-    @IBAction func logout(sender: AnyObject) {
+    @IBAction func logout(_ sender: AnyObject) {
         adapter.unauthorize()
         alert("Logged out", message: "")
     }
 
-    private func alert(title: String, message: String) {
-        let alert = UIAlertView(title: title, message: message, delegate: nil, cancelButtonTitle: "OK")
-        alert.show()
+    fileprivate func alert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let buttonAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel)
+        alert.addAction(buttonAction)
+        present(alert, animated: true, completion: nil)
     }
-
 }
 
 extension ViewController {
 
-    func cancel(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func cancel(_ sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
     }
 
-    func authorizationDidChange(notification: NSNotification) {
+    func authorizationDidChange(_ notification: Notification) {
         let adapter = notification.object as! LineAdapter
 
-        if adapter.authorized {
+        if adapter.isAuthorized {
+            dismiss(animated: true, completion: nil)
             alert("Login success!", message: "")
-            dismissViewControllerAnimated(true, completion: nil)
             return
         }
 
         if let error = notification.userInfo?["error"] as? NSError {
+            dismiss(animated: true, completion: nil)
             alert("Login error!", message: error.localizedDescription)
-            dismissViewControllerAnimated(true, completion: nil)
         }
 
     }
 
 }
-
