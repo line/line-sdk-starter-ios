@@ -21,12 +21,12 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func loginWithLine(_ sender: AnyObject) {
-        if (adapter.isAuthorized) {
+        if adapter.isAuthorized {
             alert("Already authorized", message: "")
             return
         }
 
-        if !(adapter.canAuthorizeUsingLineApp) {
+        if !adapter.canAuthorizeUsingLineApp {
             alert("LINE is not installed", message: "")
             return
         }
@@ -34,7 +34,7 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func loginInApp(_ sender: AnyObject) {
-        if (adapter.isAuthorized) {
+        if adapter.isAuthorized {
             alert("Already authorized", message: "")
             return
         }
@@ -46,14 +46,14 @@ final class ViewController: UIViewController {
     }
 
     @IBAction func tryApi(_ sender: AnyObject) {
-        if !(adapter.isAuthorized) {
+        if !adapter.isAuthorized {
             alert("Login first!", message: "")
             return
         }
 
         adapter.getLineApiClient().getMyProfile {[unowned self] (profile, error) -> Void in
-            if error != nil {
-                self.alert("Error occured!", message: (error?.localizedDescription)!)
+            if let error = error {
+                self.alert("Error occured!", message: error.localizedDescription)
                 return
             }
 
