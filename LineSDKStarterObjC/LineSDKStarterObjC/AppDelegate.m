@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import <LineAdapter/LineAdapter.h>
+#import <LineAdapter/LineSDK.h>
 
 @interface AppDelegate ()
 
@@ -23,6 +23,11 @@
 
 -(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
 
+    return [LineAdapter handleOpenURL:url];
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
     return [LineAdapter handleOpenURL:url];
 }
 
