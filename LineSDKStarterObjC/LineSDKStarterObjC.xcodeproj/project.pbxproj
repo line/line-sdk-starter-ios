@@ -14,7 +14,6 @@
 		75EE41DA1B42A9150019DA95 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75EE41D91B42A9150019DA95 /* Images.xcassets */; };
 		75EE41DD1B42A9150019DA95 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75EE41DB1B42A9150019DA95 /* LaunchScreen.xib */; };
 		75EE41F31B42A9510019DA95 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75EE41F21B42A9510019DA95 /* CoreTelephony.framework */; };
-		75EE41FD1B42A97C0019DA95 /* LineAdapter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75EE41FC1B42A97C0019DA95 /* LineAdapter.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		75EE41D91B42A9150019DA95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75EE41DC1B42A9150019DA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		75EE41F21B42A9510019DA95 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		75EE41FC1B42A97C0019DA95 /* LineAdapter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LineAdapter.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +78,6 @@
 			children = (
 				75EE41F21B42A9510019DA95 /* CoreTelephony.framework */,
 				75EE41CD1B42A9150019DA95 /* Info.plist */,
-				75EE41FC1B42A97C0019DA95 /* LineAdapter.plist */,
 				75EE41CE1B42A9150019DA95 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -145,7 +142,6 @@
 			files = (
 				75EE41D81B42A9150019DA95 /* Main.storyboard in Resources */,
 				75EE41DD1B42A9150019DA95 /* LaunchScreen.xib in Resources */,
-				75EE41FD1B42A97C0019DA95 /* LineAdapter.plist in Resources */,
 				75EE41DA1B42A9150019DA95 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
