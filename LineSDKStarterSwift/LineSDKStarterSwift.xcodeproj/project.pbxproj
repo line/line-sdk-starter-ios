@@ -22,7 +22,6 @@
 		75EE41911B4297210019DA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		75EE41931B4297210019DA95 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		75EE41961B4297210019DA95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		75EE41B41B4299E90019DA95 /* LineAdapter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LineAdapter.plist; sourceTree = "<group>"; };
 		75EE41B61B429A970019DA95 /* LineSDKStarterSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LineSDKStarterSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		75EE41BA1B429E190019DA95 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		75EE41BE1B42A7650019DA95 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -74,7 +73,6 @@
 			children = (
 				75EE41BE1B42A7650019DA95 /* CoreTelephony.framework */,
 				75EE418B1B4297210019DA95 /* Info.plist */,
-				75EE41B41B4299E90019DA95 /* LineAdapter.plist */,
 				75EE41B61B429A970019DA95 /* LineSDKStarterSwift-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
