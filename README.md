@@ -19,7 +19,7 @@ Then set up the LINE SDK by copying SDK libraries and configuring your channel I
 
 * Copy and add target the framework and bundle files
 * Replace {YOUR_URL_SCHEME} with your channel scheme (from https://developers.line.me/channels/) in Info.plist
-* Replace {YOUR_CHANNEL_ID} with your channel id (from https://developers.line.me/channels/) in LineAdapter.plist
+* Replace {YOUR_CHANNEL_ID} with your channel id (from https://developers.line.me/channels/) in Info.plist
 
 Then open the directory in Xcode and build and develop as you would any normal iOS application.
 
