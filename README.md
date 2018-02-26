@@ -12,7 +12,7 @@ To start integrating your service with LINE, register to become a LINE Partner (
 To build the app, first check out the repository.
 
 ```
-$ git clone https://github.com/linecorp/line-sdk-starter
+$ git clone https://github.com/linecorp/line-sdk-starter-ios.git
 ```
 
 Then set up the LINE SDK by copying SDK libraries and configuring your channel ID.
