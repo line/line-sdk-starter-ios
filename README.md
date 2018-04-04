@@ -1,6 +1,6 @@
 # Important notice
 
-This starter app is for LINE SDK version 3.x. Since these versions of SDK will be terminated on June 2018, please use https://github.com/line/line-sdk-starter-android-v2.
+This starter app is for LINE SDK version 3.x. Since these versions of SDK will be terminated on the end of June 2018, please use https://github.com/line/line-sdk-starter-android-v2.
 
 For details, please refer https://developers.line.me/en/news/2018/02/28/.
 
